@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅伴守護者 - 即時定位與救援系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow"></div>
 
+    <div id="home-page">
+        <header>
+            <h1>旅伴守護者</h1>
+            <p>即時定位 · 救援廣播 · 免裝 App</p>
+        </header>
+
+        <main>
+            <div class="action-group">
+                <button class="btn-create" onclick="createRoom()">
+                    <span>➕</span> 建立新房間
+                </button>
+                <button class="btn-join" onclick="showJoinInput()">
+                    <span>🔑</span> 加入現有房間
+                </button>
+            </div>
+
+            <div id="join-section" style="display:none; margin-top: 20px;">
+                <input type="text" id="room-id" style="width: 80%; padding: 10px; border-radius: 8px; border: none;" placeholder="請輸入 6 位數代碼">
+                <button class="btn-create" style="margin-top: 10px;" onclick="joinRoom()">確定進入</button>
+            </div>
+        </main>
+
+        <section class="features">
+            <div class="feature-item">📍 秒級座標同步</div>
+            <div class="feature-item">🆘 強制救援模式</div>
+            <div class="feature-item">🌐 瀏覽器即開即用</div>
+            <div class="feature-item">📱 軌跡實時追蹤</div>
+        </section>
+    </div>
+
+    <script>
+        // 顯示加入房間輸入框的簡單邏輯
+        function showJoinInput() {
+            document.getElementById('join-section').style.display = 'block';
+        }
+        
+        function createRoom() {
+            alert('正在建立房間...'); // 之後連接 JavaScript 房間模組 [cite: 21, 41]
+        }
+
+        function joinRoom() {
+            const roomId = document.getElementById('room-id').value;
+            if(roomId) {
+                alert('加入房間：' + roomId); // 之後連接通訊模組 [cite: 23, 41]
+            } else {
+                alert('請輸入代碼');
+            }
+        }
+    </script>
+</body>
+</html>
